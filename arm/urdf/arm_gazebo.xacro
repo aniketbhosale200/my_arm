@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="arm">
+
+
+    <gazebo>
+      <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+        <ros>
+          <namespace>/</namespace>
+        </ros>
+      </plugin>
+    </gazebo>
+
+    <gazebo>
+      <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+        <jointName>Joint_1, Joint_2, Joint_3, Joint_4, Joint_5, End_effector_Joint, Gripper_arm_left_Joint, Gripper_arm_right_Joint</jointName>
+      </plugin>
+    </gazebo>
+
+    <gazebo reference="Link_1">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="Link_2">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="Link_3">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="Link_4">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="Link_5">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="End_effector">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="Gripper_arm_left">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="Gripper_arm_right">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+
+</robot>
