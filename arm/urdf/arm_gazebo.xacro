@@ -5,9 +5,10 @@
     <gazebo>
       <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
         <controller_manager_name>controller_manager</controller_manager_name>
-        <parameters>$(find arm)/config/controllers.yaml</parameters>   
+        <parameters>$(find arm)/config/controllers.yaml</parameters>     
       </plugin>
     </gazebo>
+
 
     <gazebo reference="RGB_camera">
     <sensor name="rgb_camera" type="camera">
@@ -23,5 +24,64 @@
       <update_rate>30.0</update_rate>
     </sensor>
   </gazebo>
+  
+  <gazebo reference="arm_base_link">
+        <material>Gazebo/LightGrey</material>
+    </gazebo>
 
+    <!-- Gazebo material for Link_1 -->
+    <gazebo reference="Link_1">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!-- Gazebo material for Link_2 -->
+    <gazebo reference="Link_2">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!-- Gazebo material for Link_3 -->
+    <gazebo reference="Link_3">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!-- Gazebo material for Link_4 -->
+    <gazebo reference="Link_4">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!-- Gazebo material for Link_5 -->
+    <gazebo reference="Link_5">
+        <material>Gazebo/White</material>
+    </gazebo>
+
+    <!-- Gazebo material for End_effector -->
+    <gazebo reference="End_effector">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!-- Gazebo material for Gripper_base -->
+    <gazebo reference="Gripper_base">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <!-- Gazebo material for Gripper_arm_left -->
+    <gazebo reference="Gripper_arm_left">
+        <material>Gazebo/White</material>
+    </gazebo>
+
+    <!-- Gazebo material for left_finger -->
+    <gazebo reference="left_finger">
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+
+    <!-- Gazebo material for Gripper_arm_right -->
+    <gazebo reference="Gripper_arm_right">
+        <material>Gazebo/White</material>
+    </gazebo>
+
+    <!-- Gazebo material for Right_finger -->
+    <gazebo reference="Right_finger">
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+    
 </robot>
