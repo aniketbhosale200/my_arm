@@ -1,45 +1,57 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="arm">
+
+
   <ros2_control name="GazeboSystem" type="system">
     <hardware>
-      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>       
     </hardware>
+
+
     <joint name="Joint_1">
       <command_interface name="position"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
+
     <joint name="Joint_2">
       <command_interface name="position"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
+
     <joint name="Joint_3">
       <command_interface name="position"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
+
     <joint name="Joint_4">
       <command_interface name="position"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
+
     <joint name="Joint_5">
       <command_interface name="position"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
+
     <joint name="End_effector_Joint">
       <command_interface name="position"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
+
     <joint name="Gripper_arm_left_Joint">
       <command_interface name="position"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
+
     <joint name="Gripper_arm_right_Joint">
+      <!-- <command_interface name="position"/> -->
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
