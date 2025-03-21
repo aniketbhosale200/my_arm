@@ -10,42 +10,56 @@
 
     <joint name="Joint_1">
       <command_interface name="position"/>
+      <param name="min_position" value="0"/>
+      <param name="max_position" value="6.28"/>     
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
 
     <joint name="Joint_2">
       <command_interface name="position"/>
+      <param name="min_position" value="0"/>
+      <param name="max_position" value="2.059"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
 
     <joint name="Joint_3">
       <command_interface name="position"/>
+      <param name="min_position" value="0"/>
+      <param name="max_position" value="3.8"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
 
     <joint name="Joint_4">
       <command_interface name="position"/>
+      <param name="min_position" value="0"/>
+      <param name="max_position" value="6.28"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
 
     <joint name="Joint_5">
       <command_interface name="position"/>
+      <param name="min_position" value="-0.83"/>
+      <param name="max_position" value="2.9"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
 
     <joint name="End_effector_Joint">
       <command_interface name="position"/>
+      <param name="min_position" value="0"/>
+      <param name="max_position" value="6.28"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
 
     <joint name="Gripper_arm_left_Joint">
       <command_interface name="position"/>
+      <param name="min_position" value="-1.22"/>
+      <param name="max_position" value="0.06"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
