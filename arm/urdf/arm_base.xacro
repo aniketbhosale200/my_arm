@@ -52,13 +52,7 @@
             </geometry>
         </collision>
     </link>
-    <joint name="Joint_1" type="revolute">
-        <origin xyz="0 0 0.154" rpy="0 0 -1.5707963267949" />
-        <parent link="arm_base_link" />
-        <child link="Link_1" />
-        <axis xyz="0 0 -1" />
-        <limit lower="0" upper="6.28" effort="11" velocity="2" />
-    </joint>
+
     <link name="Link_2">
         <inertial>
             <origin xyz="0.00466897689329795 -0.162155529525145 -0.0536740155305947" rpy="0 0 0" />
@@ -81,13 +75,7 @@
             </geometry>
         </collision>
     </link>
-    <joint name="Joint_2" type="revolute">
-        <origin xyz="-0.0650932810459635 0.00632651267849924 0.115" rpy="-1.5707963267949 0 1.5707963267949" />
-        <parent link="Link_1" />
-        <child link="Link_2" />
-        <axis xyz="-0.0967356678669598 0 -0.995310107736445" />
-        <limit lower="0" upper="2.059" effort="11" velocity="2" />
-    </joint>
+
     <link name="Link_3">
         <inertial>
             <origin xyz="0.0625571705747566 0.0757694435809385 -0.0197412102243116" rpy="0 0 0" />
@@ -110,13 +98,7 @@
             </geometry>
         </collision>
     </link>
-    <joint name="Joint_3" type="revolute">
-        <origin xyz="0.0530599818434298 -0.28455 -0.00515697845398792" rpy="0 0 0" />
-        <parent link="Link_2" />
-        <child link="Link_3" />
-        <axis xyz="-0.0967356678669597 0 -0.995310107736445" />
-        <limit lower="0" upper="3.8" effort="11" velocity="2" />
-    </joint>
+
     <link name="Link_4">
         <inertial>
             <origin xyz="0.00285172563081149 -0.0260073157026074 0.123071893834179" rpy="0 0 0" />
@@ -139,13 +121,7 @@
             </geometry>
         </collision>
     </link>
-    <joint name="Joint_4" type="revolute">
-        <origin xyz="0.0784902400245383 0.17127 -0.0648971665089489" rpy="-1.5707963267949 0 0" />
-        <parent link="Link_3" />
-        <child link="Link_4" />
-        <axis xyz="0 0 -1" />
-        <limit lower="0" upper="6.28" effort="11" velocity="2" />
-    </joint>
+
     <link name="Link_5">
         <inertial>
             <origin xyz="0.0286748088454602 0.0507749814554782 0.0178696299113226" rpy="0 0 0" />
@@ -168,13 +144,7 @@
             </geometry>
         </collision>
     </link>
-    <joint name="Joint_5" type="revolute">
-        <origin xyz="-0.000337607480855595 0.00347363227600019 0.2" rpy="-1.5707963267949 0 0" />
-        <parent link="Link_4" />
-        <child link="Link_5" />
-        <axis xyz="0.0967356678669599 0 -0.995310107736445" />
-        <limit lower="-0.83" upper="2.9" effort="11" velocity="2" />
-    </joint>
+
     <link name="End_effector">
         <inertial>
             <origin xyz="1.79542801708177E-05 -0.000122480752124874 0.0096061474499399" rpy="0 0 0" />
@@ -197,13 +167,7 @@
             </geometry>
         </collision>
     </link>
-    <joint name="End_effector_Joint" type="revolute">
-        <origin xyz="0.0872672717341501 0.0490789751008787 0.0185287556820571" rpy="1.47993501318796 -0.0336819095690923 1.21676367586924" />
-        <parent link="Link_5" />
-        <child link="End_effector" />
-        <axis xyz="0 0 -1" />
-        <limit lower="0" upper="6.28" effort="11" velocity="2" />
-    </joint>
+
     <link name="Gripper_base">
         <inertial>
             <origin xyz="7.70182675857711E-06 -3.45372920922127E-07 0.0440536598355998" rpy="0 0 0" />
@@ -226,12 +190,7 @@
             </geometry>
         </collision>
     </link>
-    <joint name="Gripper_base_joint" type="fixed">
-        <origin xyz="0 0 0.0171450000000004" rpy="0 0 -0.145551942518358" />
-        <parent link="End_effector" />
-        <child link="Gripper_base" />
-        <axis xyz="0 0 0" />
-    </joint>
+
     <link name="Gripper_arm_left">
         <inertial>
             <origin xyz="0.0415392668558662 0.018365565064578 0.0104837110778671" rpy="0 0 0" />
@@ -254,13 +213,7 @@
             </geometry>
         </collision>
     </link>
-    <joint name="Gripper_arm_left_Joint" type="revolute">
-        <origin xyz="0 -0.0166250000000014 0.0488750000000003" rpy="3.03621521440085 -1.57079631189374 0.0947157459884758" />
-        <parent link="Gripper_base" />
-        <child link="Gripper_arm_left" />
-        <axis xyz="0 0.287009841740442 -0.957927633354486" />
-        <limit lower="-1.22" upper="0.06" effort="11" velocity="2" />
-    </joint>
+
     <link name="left_finger">
         <inertial>
             <origin xyz="0.0276961872778643 -0.0147135019401428 0.00437246794423679" rpy="0 0 0" />
@@ -283,12 +236,7 @@
             </geometry>
         </collision>
     </link>
-    <joint name="left_finger_joint" type="fixed">
-        <origin xyz="0.0760387769781833 0.012682131802507 0" rpy="0 0 0" />
-        <parent link="Gripper_arm_left" />
-        <child link="left_finger" />
-        <axis xyz="0 0 0" />
-    </joint>
+
     <link name="Gripper_arm_right">
         <inertial>
             <origin xyz="0.0415392668558654 -0.0183655650645822 -0.0104837110778671" rpy="0 0 0" />
@@ -311,14 +259,7 @@
             </geometry>
         </collision>
     </link>
-    <joint name="Gripper_arm_right_Joint" type="revolute">
-        <origin xyz="0 0.0166249999999972 0.0488750000000009" rpy="3.04926331885819 -1.57079631189374 0.0947157459884758" />
-        <parent link="Gripper_base" />
-        <child link="Gripper_arm_right" />
-        <axis xyz="0 0.287009841740441 -0.957927633354486" />
-        <limit lower="0" upper="0" effort="11" velocity="2" />
-        <mimic joint="Gripper_arm_left_Joint" multiplier="-1" offset="0" />
-    </joint>
+
     <link name="Right_finger">
         <inertial>
             <origin xyz="0.027616145582933 0.0148633586436651 -0.00432757204095563" rpy="0 0 0" />
@@ -341,12 +282,7 @@
             </geometry>
         </collision>
     </link>
-    <joint name="Right_finger_Joint" type="fixed">
-        <origin xyz="0.0760387769781832 -0.012682131802507 0" rpy="0 0 0" />
-        <parent link="Gripper_arm_right" />
-        <child link="Right_finger" />
-        <axis xyz="0 0 0" />
-    </joint>
+
     <link name="RGB_camera">
         <inertial>
             <origin xyz="0.00952416675236908 0.000322242755626256 -0.0086020702736585" rpy="0 0 0" />
@@ -369,6 +305,93 @@
             </geometry>
         </collision>
     </link>
+
+    <joint name="Joint_1" type="revolute">
+        <origin xyz="0 0 0.154" rpy="0 0 -1.5707963267949" />
+        <parent link="arm_base_link" />
+        <child link="Link_1" />
+        <axis xyz="0 0 -1" />
+        <limit lower="0" upper="6.28" effort="11" velocity="2" />
+    </joint>
+
+    <joint name="Joint_2" type="revolute">
+        <origin xyz="-0.0650932810459635 0.00632651267849924 0.115" rpy="-1.5707963267949 0 1.5707963267949" />
+        <parent link="Link_1" />
+        <child link="Link_2" />
+        <axis xyz="-0.0967356678669598 0 -0.995310107736445" />
+        <limit lower="0" upper="2.059" effort="11" velocity="2" />
+    </joint>
+
+    <joint name="Joint_3" type="revolute">
+        <origin xyz="0.0530599818434298 -0.28455 -0.00515697845398792" rpy="0 0 0" />
+        <parent link="Link_2" />
+        <child link="Link_3" />
+        <axis xyz="-0.0967356678669597 0 -0.995310107736445" />
+        <limit lower="0" upper="3.8" effort="11" velocity="2" />
+    </joint>
+
+    <joint name="Joint_4" type="revolute">
+        <origin xyz="0.0784902400245383 0.17127 -0.0648971665089489" rpy="-1.5707963267949 0 0" />
+        <parent link="Link_3" />
+        <child link="Link_4" />
+        <axis xyz="0 0 -1" />
+        <limit lower="0" upper="6.28" effort="11" velocity="2" />
+    </joint>
+
+    <joint name="Joint_5" type="revolute">
+        <origin xyz="-0.000337607480855595 0.00347363227600019 0.2" rpy="-1.5707963267949 0 0" />
+        <parent link="Link_4" />
+        <child link="Link_5" />
+        <axis xyz="0.0967356678669599 0 -0.995310107736445" />
+        <limit lower="-0.83" upper="2.9" effort="11" velocity="2" />
+    </joint>
+
+    <joint name="End_effector_Joint" type="revolute">
+        <origin xyz="0.0872672717341501 0.0490789751008787 0.0185287556820571" rpy="1.47993501318796 -0.0336819095690923 1.21676367586924" />
+        <parent link="Link_5" />
+        <child link="End_effector" />
+        <axis xyz="0 0 -1" />
+        <limit lower="0" upper="6.28" effort="11" velocity="2" />
+    </joint>
+
+    <joint name="Gripper_base_joint" type="fixed">
+        <origin xyz="0 0 0.0171450000000004" rpy="0 0 -0.145551942518358" />
+        <parent link="End_effector" />
+        <child link="Gripper_base" />
+        <axis xyz="0 0 0" />
+    </joint>
+
+    <joint name="Gripper_arm_left_Joint" type="revolute">
+        <origin xyz="0 -0.0166250000000014 0.0488750000000003" rpy="3.03621521440085 -1.57079631189374 0.0947157459884758" />
+        <parent link="Gripper_base" />
+        <child link="Gripper_arm_left" />
+        <axis xyz="0 0.287009841740442 -0.957927633354486" />
+        <limit lower="-1.22" upper="0.06" effort="11" velocity="2" />
+    </joint>
+
+    <joint name="left_finger_joint" type="fixed">
+        <origin xyz="0.0760387769781833 0.012682131802507 0" rpy="0 0 0" />
+        <parent link="Gripper_arm_left" />
+        <child link="left_finger" />
+        <axis xyz="0 0 0" />
+    </joint>
+
+    <joint name="Gripper_arm_right_Joint" type="revolute">
+        <origin xyz="0 0.0166249999999972 0.0488750000000009" rpy="3.04926331885819 -1.57079631189374 0.0947157459884758" />
+        <parent link="Gripper_base" />
+        <child link="Gripper_arm_right" />
+        <axis xyz="0 0.287009841740441 -0.957927633354486" />
+        <limit lower="-1.22" upper="0.06" effort="11" velocity="2" />
+        <mimic joint="Gripper_arm_left_Joint" multiplier="-1" offset="0" />
+    </joint>
+
+    <joint name="Right_finger_Joint" type="fixed">
+        <origin xyz="0.0760387769781832 -0.012682131802507 0" rpy="0 0 0" />
+        <parent link="Gripper_arm_right" />
+        <child link="Right_finger" />
+        <axis xyz="0 0 0" />
+    </joint>
+
     <joint name="RGB_camera_Joint" type="fixed">
         <origin xyz="0.0328520110000001 0 0.0625449999999999" rpy="0 0 1.68252695082463" />
         <parent link="Gripper_base" />
