@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="aarm">
+
+
+    <gazebo>
+        <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+            <parameters>/home/imbatman/arm_ws/src/aaarm_moveit/config/ros2_controllers.yaml</parameters>
+        </plugin>
+    </gazebo>
+
+    
+    <gazebo reference="base_link">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+    <gazebo reference="link_1">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="link_2">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="link_3">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="link_4">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="link_5">
+        <material>Gazebo/White</material>
+    </gazebo>
+    <gazebo reference="end_effector">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="gripper_base">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+    <gazebo reference="left_gripper_arm">
+        <material>Gazebo/White</material>
+    </gazebo>
+    <gazebo reference="left_tip">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="right_gripper_arm">
+        <material>Gazebo/White</material>
+    </gazebo>
+    <gazebo reference="right_tip">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    
+</robot>

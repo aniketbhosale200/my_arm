@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="aarm">
+
+  <xacro:include filename="aarm_base.xacro" />
+  <xacro:include filename="$(find aarm)/urdf/aarm_gazebo.xacro"/>
+  <xacro:include filename="$(find aarm)/urdf/aarm_ros2_control.xacro"/>
+
+
+</robot>
