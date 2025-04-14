@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="xaarm">
+
+  <!-- Define mesh_path if not already defined -->
+  <!-- <xacro:property name="mesh_path" value="package://xaarm/meshes" /> -->
+
+  <!-- G Camera Link -->
+  <link name="g_camera">
+    <inertial>
+      <origin xyz="-0.0088 0 0" rpy="0 0 0"/>
+      <mass value="0.0208"/>
+      <inertia ixx="1e-5" ixy="0" ixz="0" iyy="1e-5" iyz="0" izz="1e-5"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="${mesh_path}/g_camera.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.7922 0.8196 0.9333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/> <!-- Simplified for efficiency -->
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Joint to attach camera to gripper_base -->
+  <joint name="g_camera_joint" type="fixed">
+    <origin xyz="0.0002 0.0329 0.0612" rpy="3.14159 -1.5708 1.5708"/>
+    <parent link="gripper_base"/>
+    <child link="g_camera"/>
+  </joint>
+
+  <!-- Optical Frame for correct point cloud orientation -->
+  <link name="g_camera_optical"/>
+  <joint name="g_camera_optical_joint" type="fixed">
+    <parent link="g_camera"/>
+    <child link="g_camera_optical"/>
+    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
+  </joint>
+
+  <gazebo reference="g_camera">
+    <sensor type="depth" name="g_rgbd_camera">
+        <always_on>true</always_on>
+        <pose>0 0 0 0 0 0</pose> <!-- Rotate sensor -90° around Y -->
+            <update_rate>30.0</update_rate> <!-- 30 Hz -->
+            <camera>
+                <horizontal_fov>1.047</horizontal_fov> <!-- ~60 degrees -->
+                <image>
+                    <width>640</width>
+                    <height>480</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.1</near> <!-- 10 cm -->
+                    <far>8.0</far> <!-- 10 m -->
+                </clip>
+                <depth_camera/>
+            </camera>
+        <plugin name="g_rgbd_camera_controller" filename="libgazebo_ros_camera.so">
+            <ros>
+                <cameraName>g_rgbd_camera</cameraName>
+                <imageTopicName>/g_rgbd_camera/color/image_raw</imageTopicName>
+                <depthImageTopicName>/g_rgbd_camera/depth/image_raw</depthImageTopicName>
+                <pointCloudTopicName>/g_rgbd_camera/depth/points</pointCloudTopicName>
+                <cameraInfoTopicName>/g_rgbd_camera/color/camera_info</cameraInfoTopicName>
+                <depthCameraInfoTopicName>/g_rgbd_camera/depth/camera_info</depthCameraInfoTopicName>
+            </ros>
+            <frame_name>g_camera_optical</frame_name>
+        </plugin>
+    </sensor>
+  </gazebo>
+</robot>
